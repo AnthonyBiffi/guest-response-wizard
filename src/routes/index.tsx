@@ -31,7 +31,7 @@ function Invitation() {
 
   return (
     <main className="relative mx-auto flex min-h-screen max-w-md flex-col items-center px-4 py-6">
-      <div className="animate-fade-up relative w-full overflow-hidden rounded-[1.75rem] shadow-soft">
+      <div className="animate-fade-up relative w-full overflow-hidden rounded-[1.25rem] shadow-soft">
         <img
           src={frame.url}
           alt=""
@@ -40,7 +40,7 @@ function Invitation() {
         />
 
         <div className="relative px-9 pb-24 pt-[19rem] text-center">
-          <p className="font-serif text-xs uppercase tracking-[0.3em] text-muted-foreground">Você está convidado</p>
+          <p className="font-serif text-xs uppercase tracking-[0.3em] text-secondary-foreground/80">Você está convidado</p>
           <h1 className="font-script text-5xl leading-tight text-primary">Chá de Bebê</h1>
 
           <div className="ribbon mx-auto mt-3 w-full py-2 font-serif text-base font-semibold shadow-soft">
