@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- The decorative frame on the invitation page (`/`) is the card background itself, loaded from a CDN asset pointer under `src/assets`, and page content must stay inside the artwork's clear center band. Why: the frame's canopy and lace leave a fixed empty center, and binaries belong on the CDN rather than in the repo.
