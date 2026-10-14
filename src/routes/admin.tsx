@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Copy, Gift, MessageCircle, Plus, Trash2, Users } from "lucide-react";
 import { toast } from "sonner";
 import cherry from "@/assets/cherry.png";
@@ -20,13 +20,14 @@ export const Route = createFileRoute("/admin")({
   component: Admin,
 });
 
-const linkFor = (g: Guest) =>
-  `${typeof window !== "undefined" ? window.location.origin : ""}/?id=${g.id}`;
 
 function Admin() {
   const { guests, addGuest, remove } = useGuests();
   const [name, setName] = useState("");
   const [gift, setGift] = useState("");
+  const [origin, setOrigin] = useState("");
+  useEffect(() => setOrigin(window.location.origin), []);
+  const linkFor = (g: Guest) => `${origin}/?id=${g.id}`;
   const confirmed = guests.filter((g) => g.confirmed).length;
 
   const submit = (e: FormEvent) => {
