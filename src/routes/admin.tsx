@@ -59,7 +59,7 @@ function Admin() {
             <p className="text-sm text-muted-foreground">Painel da mamãe</p>
           </div>
         </div>
-        <Link to="/" search={{ id: undefined }} className="text-sm font-semibold text-primary hover:underline">Ver convite →</Link>
+        <Link to="/" className="text-sm font-semibold text-primary hover:underline">Ver convite →</Link>
       </header>
 
       <div className="mb-6 grid grid-cols-3 gap-3">

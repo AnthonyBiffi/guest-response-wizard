@@ -5,7 +5,7 @@ import cherry from "@/assets/cherry.png";
 import { EVENT, useGuests } from "@/lib/guests";
 
 export const Route = createFileRoute("/")({
-  validateSearch: (s: Record<string, unknown>) => ({ id: s.id ? String(s.id) : undefined }),
+  validateSearch: (s: Record<string, unknown>): { id?: string } => (s["id"] ? { id: String(s["id"]) } : {}),
   head: () => ({
     meta: [
       { title: "Chá de Bebê — Seu convite" },
