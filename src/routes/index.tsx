@@ -30,7 +30,7 @@ function Invitation() {
   ];
 
   return (
-    <main className="relative mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-4 py-6">
+    <main className="relative mx-auto flex min-h-screen max-w-md flex-col items-center px-4 py-6">
       <div className="animate-fade-up relative w-full overflow-hidden rounded-[1.75rem] shadow-soft">
         <img
           src={frame.url}
@@ -39,47 +39,47 @@ function Invitation() {
           className="pointer-events-none absolute inset-0 h-full w-full object-fill"
         />
 
-        <div className="relative px-10 pb-28 pt-40 text-center">
-          <p className="font-serif text-sm uppercase tracking-[0.3em] text-muted-foreground">Você está convidado</p>
-          <h1 className="mt-1 font-script text-6xl leading-tight text-primary">Chá de Bebê</h1>
+        <div className="relative px-9 pb-24 pt-[19rem] text-center">
+          <p className="font-serif text-xs uppercase tracking-[0.3em] text-muted-foreground">Você está convidado</p>
+          <h1 className="font-script text-5xl leading-tight text-primary">Chá de Bebê</h1>
 
-          <div className="ribbon mx-auto mt-4 w-full py-3 font-serif text-lg font-semibold shadow-soft">
+          <div className="ribbon mx-auto mt-3 w-full py-2 font-serif text-base font-semibold shadow-soft">
             {EVENT.date} · {EVENT.time}
           </div>
 
           {guest ? (
             <>
-              <p className="mt-6 font-script text-4xl text-foreground">Olá, {guest.name}!</p>
-              <p className="mt-2 font-serif text-lg text-muted-foreground">
+              <p className="mt-4 font-script text-3xl text-foreground">Olá, {guest.name}!</p>
+              <p className="mt-1 font-serif text-base text-muted-foreground">
                 Será uma alegria ter você conosco nesse momento tão doce.
               </p>
-              <div className="mt-5 rounded-2xl border border-dashed border-accent bg-card/70 p-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-secondary-foreground">Sua sugestão de presente é</p>
-                <p className="mt-1 flex items-center justify-center gap-2 font-serif text-2xl font-bold text-primary">
+              <div className="mt-4 rounded-2xl border border-dashed border-accent bg-card/70 p-3">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-secondary-foreground">Sua sugestão de presente é</p>
+                <p className="mt-1 flex items-center justify-center gap-2 font-serif text-xl font-bold text-primary">
                   <Gift className="size-5 shrink-0" /> {guest.gift}
                 </p>
               </div>
               <button
                 onClick={() => confirm(guest.id)}
                 disabled={guest.confirmed}
-                className="bg-cherry mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 disabled:translate-y-0 disabled:opacity-80 disabled:brightness-100"
+                className="bg-cherry mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 disabled:translate-y-0 disabled:opacity-80 disabled:brightness-100"
               >
                 {guest.confirmed ? (<><CheckCircle2 className="size-5" /> Presença Confirmada!</>) : (<><Heart className="size-5" /> Confirmar Presença</>)}
               </button>
             </>
           ) : (
-            <p className="mt-6 font-serif text-lg text-muted-foreground">Convite não encontrado. Verifique seu link 🍒</p>
+            <p className="mt-4 font-serif text-base text-muted-foreground">Convite não encontrado. Verifique seu link 🍒</p>
           )}
 
-          <p className="mt-5 text-sm text-muted-foreground">{EVENT.address}</p>
+          <p className="mt-3 text-xs text-muted-foreground">{EVENT.address}</p>
 
-          <nav className="mt-8 flex w-full justify-center gap-6">
+          <nav className="mt-5 flex w-full justify-center gap-6">
             {actions.map(({ label, icon: Icon, href }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" className="group flex w-20 flex-col items-center gap-2 text-center">
-                <span className="flex size-14 items-center justify-center rounded-full border-2 border-accent bg-card/90 text-primary shadow-soft transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Icon className="size-6" />
+              <a key={label} href={href} target="_blank" rel="noreferrer" className="group flex w-16 flex-col items-center gap-1.5 text-center">
+                <span className="flex size-12 items-center justify-center rounded-full border-2 border-accent bg-card/90 text-primary shadow-soft transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Icon className="size-5" />
                 </span>
-                <span className="text-xs font-semibold text-foreground">{label}</span>
+                <span className="text-[11px] font-semibold text-foreground">{label}</span>
               </a>
             ))}
           </nav>
