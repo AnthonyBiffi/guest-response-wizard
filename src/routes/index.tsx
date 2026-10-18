@@ -77,7 +77,7 @@ function ConviteIndex() {
 
           <div className="flex justify-center gap-8 w-full">
              <a 
-                href="https://wa.me/5511900000000?text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20chá%20de%20bebê%20da%20Maitê." 
+                href="https://wa.me/5511924554495?text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20chá%20de%20bebê%20da%20Maitê." 
                 target="_blank" 
                 rel="noreferrer" 
                 className="flex flex-col items-center group cursor-pointer"
