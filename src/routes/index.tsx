@@ -76,24 +76,39 @@ function ConviteIndex() {
           <p className="text-xs text-[#a48a8a] mb-10">Avenida André Cavanha, 16 – Itapevi, SP</p>
 
           <div className="flex justify-center gap-8 w-full">
-             <button className="flex flex-col items-center group">
+             <a 
+                href="https://wa.me/5511900000000?text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20chá%20de%20bebê%20da%20Maitê." 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex flex-col items-center group cursor-pointer"
+             >
                 <div className="w-12 h-12 rounded-full border border-[#e6b8b8] text-[#c13a3a] flex items-center justify-center mb-2 group-hover:bg-[#fff0f3] transition-colors">
                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                 </div>
                 <span className="text-[11px] text-[#7a6f6f]">WhatsApp</span>
-             </button>
-             <button className="flex flex-col items-center group">
+             </a>
+             <a 
+                href="https://www.google.com/maps/search/?api=1&query=Avenida+André+Cavanha,+16+–+Itapevi,+SP" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex flex-col items-center group cursor-pointer"
+             >
                 <div className="w-12 h-12 rounded-full border border-[#e6b8b8] text-[#c13a3a] flex items-center justify-center mb-2 group-hover:bg-[#fff0f3] transition-colors">
                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <span className="text-[11px] text-[#7a6f6f]">Local</span>
-             </button>
-             <button className="flex flex-col items-center group">
+             </a>
+             <a 
+                href="COLOQUE_AQUI_O_LINK_DA_LISTA" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex flex-col items-center group cursor-pointer"
+             >
                 <div className="w-12 h-12 rounded-full border border-[#e6b8b8] text-[#c13a3a] flex items-center justify-center mb-2 group-hover:bg-[#fff0f3] transition-colors">
                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
                 </div>
                 <span className="text-[11px] text-[#7a6f6f] leading-tight">Lista<br/>completa</span>
-             </button>
+             </a>
           </div>
 
         </div>
