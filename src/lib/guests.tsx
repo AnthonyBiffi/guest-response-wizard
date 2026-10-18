@@ -18,13 +18,10 @@ export const EVENT = {
   giftListUrl: "https://www.amazon.com.br/baby-reg",
 };
 
-const MOCK: Guest[] = [
-  { id: "123", name: "Maria", gift: "Pacote de fraldas tamanho P", confirmed: false },
-  { id: "a7k2p", name: "João e Ana", gift: "Kit de body branco (RN)", confirmed: true },
-  { id: "x9m4q", name: "Tia Lúcia", gift: "Manta de algodão", confirmed: false },
-];
-
+const MOCK: Guest[] = []; // Inicia vazio para não misturar mock com banco real
 const KEY = "cha-bebe-guests";
+
+// Só usado se o Supabase não estiver configurado
 const genId = () => Math.random().toString(36).slice(2, 7);
 
 type Ctx = {
@@ -105,33 +102,36 @@ export function GuestsProvider({ children }: { children: ReactNode }) {
   }, [guests, localLoaded]);
 
   const addGuest = async (name: string, gift: string): Promise<Guest | null> => {
-    const newGuest: Guest = { id: genId(), name, gift, confirmed: false };
-
+    
     if (isSupabaseConfigured && supabase) {
       try {
+        // CRÍTICO: Não enviamos o 'id'. Deixamos o Supabase criar o UUID sozinho!
         const { data, error } = await supabase
           .from("guests")
-          .insert([newGuest])
+          .insert([{ name, gift, confirmed: false }])
           .select("id, name, gift, confirmed")
           .single();
 
-        if (error) {
+        if (error || !data) {
           console.error("Erro ao salvar convidado no Supabase:", error);
           toast.error("Erro ao salvar convidado no Supabase.");
           return null;
         }
 
-        const created = (data as Guest) || newGuest;
-        setGuests((prev) => [created, ...prev.filter((g) => g.id !== created.id)]);
+        const created = data as Guest;
+        setGuests((prev) => [created, ...prev]);
         return created;
+
       } catch (err) {
         console.error("Erro ao conectar ao Supabase:", err);
         toast.error("Falha ao salvar no banco de dados.");
         return null;
       }
     } else {
-      setGuests((prev) => [newGuest, ...prev]);
-      return newGuest;
+      // Criação APENAS local (se o Supabase falhar as chaves)
+      const newLocalGuest: Guest = { id: genId(), name, gift, confirmed: false };
+      setGuests((prev) => [newLocalGuest, ...prev]);
+      return newLocalGuest;
     }
   };
 
