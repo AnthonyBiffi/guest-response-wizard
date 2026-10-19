@@ -91,9 +91,9 @@ function ConviteIndex() {
             Você está convidado
           </p>
           
-          <h1 className="text-4xl font-serif italic text-[#c13a3a] mb-6 drop-shadow-sm">
-            Chá de Bebê da Maitê
-          </h1>
+<h1 className="text-5xl font-['Dancing_Script'] text-[#c13a3a] mb-6 drop-shadow-sm">
+  Chá de Bebê da Maitê
+</h1>
           
           <div className="relative w-[110%] bg-[#c13a3a] text-white py-2.5 mb-8 shadow-sm">
              <p className="text-sm font-medium tracking-wide">domingo, 6 de dezembro · às 15h</p>
