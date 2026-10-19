@@ -83,9 +83,9 @@ function ConviteIndex() {
             Você está convidado
           </p>
           
-          {/* TÍTULO 100% COM A FONTE MANUSCRITA DA MAITÊ */}
           <h1 className="mb-6 drop-shadow-sm flex flex-col items-center font-['Great_Vibes'] text-[#c13a3a] font-normal">
-            <span className="text-[2.5rem] leading-none mb-1">Chá de Bebê da Maitê</span>
+            <span className="text-[2.8rem] leading-none mb-2">Chá de Bebê da</span>
+            <span className="text-[5rem] leading-none">Maitê</span>
           </h1>
           
           <div className="relative w-[110%] bg-[#c13a3a] text-white py-2.5 mb-8 shadow-sm">
@@ -102,11 +102,10 @@ function ConviteIndex() {
 
           <div className="w-full border border-[#e6b8b8] border-dashed rounded-2xl p-4 bg-white/80 backdrop-blur-sm mb-6">
             <p className="font-['Montserrat'] text-[10px] text-[#a48a8a] uppercase mb-2 tracking-wider">Sua Sugestão de Presente É</p>
-            <div className="font-['Montserrat'] text-[#c13a3a] font-medium flex items-center justify-center gap-2">
-               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-               </svg>
+            <div className="font-['Great_Vibes'] text-[#c13a3a] text-3xl font-normal flex items-center justify-center gap-3 mt-2">
+               <svg className="w-4 h-4 text-[#e6b8b8]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                {isLoading ? '...' : guestGift}
+               <svg className="w-4 h-4 text-[#e6b8b8]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             </div>
           </div>
 
@@ -119,13 +118,34 @@ function ConviteIndex() {
                 : 'bg-[#da7474] hover:bg-[#c96262] text-white'
             }`}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            {isConfirmed ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            )}
             {isConfirming ? 'A confirmar...' : isConfirmed ? 'Presença Confirmada!' : 'Confirmar Presença'}
           </button>
 
-          <p className="font-['Montserrat'] text-xs text-[#a48a8a] mb-10">Avenida André Cavanha, 16 – Itapevi, SP</p>
+          <p className="font-['Montserrat'] text-xs text-[#a48a8a] mb-5">Avenida André Cavanha, 16 – Itapevi, SP</p>
+
+          {/* ENFEITE FINAL COM CEREJA E CORAÇÕES */}
+          <div className="flex items-center justify-center gap-2 w-full mb-8 opacity-80">
+            <svg className="w-10 h-3 text-[#e6b8b8]" viewBox="0 0 50 15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <path d="M0,10 Q15,-2 30,8 T50,8" />
+            </svg>
+            <svg className="w-2.5 h-2.5 text-[#da7474]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            
+            <img src={cherryTop} alt="Cereja decorativa" className="w-8 drop-shadow-sm mx-1" />
+            
+            <svg className="w-2.5 h-2.5 text-[#da7474]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg className="w-10 h-3 text-[#e6b8b8]" viewBox="0 0 50 15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" style={{ transform: 'scaleX(-1)' }}>
+              <path d="M0,10 Q15,-2 30,8 T50,8" />
+            </svg>
+          </div>
 
           <div className="flex justify-center gap-8 w-full">
              <a href="https://wa.me/5511924554495?text=Olá!%20Gostaria%20de%20falar%20sobre%20o%20chá%20de%20bebê%20da%20Maitê." target="_blank" rel="noreferrer" className="flex flex-col items-center group cursor-pointer">
