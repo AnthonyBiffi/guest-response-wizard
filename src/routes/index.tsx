@@ -79,7 +79,7 @@ function ConviteIndex() {
 
         <div className="relative z-10 w-full px-6 pt-40 flex flex-col items-center">
           
-          <p className="font-['Montserrat'] text-[10px] tracking-[0.2em] text-[#a48a8a] uppercase mb-1">
+          <p className="font-['Montserrat'] text-[10px] tracking-[0.2em] text-[#a48a8a] uppercase mb-6">
             Você está convidado
           </p>
           
@@ -92,11 +92,11 @@ function ConviteIndex() {
              <p className="font-['Montserrat'] text-sm font-medium tracking-wide">domingo, 6 de dezembro · às 15h</p>
           </div>
 
-          <h2 className="font-['Playfair_Display'] italic font-normal text-3xl text-[#4a4a4a] mb-4">
+          <h2 className="font-['Montserrat'] italic font-normal text-3xl text-[#4a4a4a] mb-4">
             Olá, {isLoading ? '...' : guestName}!
           </h2>
           
-          <p className="font-['Cormorant_Garamond'] italic font-medium text-[#7a6f6f] text-[1.25rem] leading-relaxed mb-8 px-4">
+          <p className="font-['Montserrat'] italic font-medium text-[#7a6f6f] text-[1rem] leading-relaxed mb-8 px-4">
             Será uma alegria ter você conosco nesse momento tão doce.
           </p>
 
