@@ -1,7 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -50,9 +50,12 @@
   --color-leaf: var(--leaf);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
+  
+  /* Fontes atualizadas para o novo estilo */
   --font-script: "Great Vibes", cursive;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
   --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -187,3 +190,34 @@
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @utility animate-fade-up { animation: fade-up 0.7s ease-out both; }
+
+/* 
+ * Classes Personalizadas de Tipografia 
+ */
+
+/* Título principal */
+.titulo-convite {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Nome em destaque */
+.nome-bebe {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+/* Textos e informações */
+body,
+.data,
+.endereco,
+.botao-confirmar {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Frases delicadas */
+.mensagem {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
